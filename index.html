@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancionero</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .contenedor {
+            width: 1024px;
+            height: 768px;
+            border: 2px solid black;
+            margin: 0 auto;
+            background-color: white;
+
+            display: grid;
+            grid-template-columns: 724px 300px;
+            grid-template-rows: 90px 50px 568px 60px;
+        }
+
+
+        .boxheader {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            
+            background-color: #8b6cf1;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .boxnav {
+            grid-column: 1 / 3;
+            grid-row: 2;
+            
+            background-color: #604dac;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .boxnav a {
+            color: white;
+            text-decoration: none;
+            background-color: #481982;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            border: 1px solid #432895;
+        }
+
+        .boxsection {
+            grid-column: 1 / 2;
+            grid-row: 3;
+            
+            background-color: white;
+            padding: 25px;
+            box-sizing: border-box;
+            color: black;
+        }
+
+        .boxsection h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .boxsection p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .contenedor-imagenes {
+            display: grid;
+            /* Crea columnas automáticas del mismo tamaño (máximo 3) */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            /* Espacio de separación entre las imágenes */
+            gap: 15px; 
+            /* Margen arriba para que no se pegue al texto de bienvenida */
+            margin-top: 20px; 
+            /* Evita que se encime con el contenido de la derecha */
+            width: 100%; 
+        }
+
+        .contenedor-imagenes img {
+            width: 100%;       /* Hace que la imagen use todo el ancho de su columna */
+            height: 200px;     /* Altura fija para que todas se vean parejas (ajústala a tu gusto) */
+            object-fit: cover; /* Evita que las imágenes se estiren o se deformen */
+            border-radius: 8px;/* Bordes redondeados estéticos */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombrita suave para que resalten */
+        }
+
+        .boxaside {
+            grid-column: 2 / 3;
+            grid-row: 3;
+            
+            background-color: #dceddc;
+            color: black;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .imagen-seccion {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            
+            object-position: center; 
+        }
+
+        .boxfooter {
+            grid-column: 1 / 3;
+            grid-row: 4;
+            
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="boxheader">Cancionero</div>
+        <div class="boxnav">
+            <a href="cancion1.html">La Flaca</a>
+            <a href="cancion2.html">Te Quiero</a>
+            <a href="cancion3.html">La Noche más Linda del Mundo</a>
+            <a href="cancion4.html">Lamento Boliviano</a>
+            <a href="cancion5.html">Culpable o No</a>
+        </div>
+
+        <div class="boxsection">
+            <h2>Bienvenido</h2>
+            <p>Las canciones las puedes elegir en los botones de arriba.</p>
+
+            <div class="contenedor-imagenes">
+                <img src="imagenes/jarabe de palo.jpg" alt="Portada 1">
+                <img src="imagenes/luis miguel.jpg" alt="Portada 2">
+                <img src="imagenes/hombre g.jpg" alt="Portada 3">
+            </div>
+
+        </div>
+        <div class="boxaside">
+            <img src="imagenes/Publicidad Coca.jpg" alt="Anuncio Coca-Cola" class="imagen-seccion">
+        </div>
+        <div class="boxfooter">
+            &copy; 2026 Jade Guadalupe Pacheco Uc | Todos los derechos reservados
+        </div>
+    </div>
+</body>
+</html>

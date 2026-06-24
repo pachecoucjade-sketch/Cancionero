@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancionero</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .contenedor {
+            width: 1024px;
+            height: 768px;
+            border: 2px solid black;
+            margin: 0 auto;
+            background-color: white;
+
+            display: grid;
+            grid-template-columns: 724px 300px;
+            grid-template-rows: 90px 50px 568px 60px;
+        }
+
+        .boxheader {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            background-color: #8b6cf1;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .boxnav {
+            grid-column: 1 / 3;
+            grid-row: 2;
+            background-color: #604dac;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .boxnav a {
+            color: white;
+            text-decoration: none;
+            background-color: #481982;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            border: 1px solid #432895;
+        }
+
+        /* --- NUEVO: SUB-GRID PARA MAQUETAR EL INTERIOR DE LA CANCIÓN --- */
+        .boxsection {
+            grid-column: 1 / 2;
+            grid-row: 3;
+            background-color: white;
+            padding: 25px;
+            box-sizing: border-box;
+            color: black;
+
+            /* Convertimos la sección en un grid interno */
+            display: grid;
+            grid-template-columns: 250px 1fr; /* Columna para foto (250px) y columna para la letra (el resto) */
+            grid-template-rows: 1fr auto;      /* Fila superior para contenido, fila inferior automática para el audio */
+            gap: 20px;                         /* Espacio de separación entre elementos */
+        }
+
+        /* Contenedor de la foto de portada */
+        .cancion-foto {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            border: 2px solid black; /* Borde negro como tu boceto */
+            height: 250px;           /* Cuadrante para la foto */
+            overflow: hidden;
+        }
+
+        .cancion-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Espacio para el texto de la letra */
+        .cancion-letra {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            overflow-y: auto;        /* Si la letra es muy larga, aparece una barra de desplazamiento interno */
+            padding-right: 10px;
+        }
+
+        .cancion-letra h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .cancion-letra pre {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Contenedor del reproductor de audio */
+        .cancion-audio {
+            grid-column: 1 / 3;       /* Abarca las dos columnas internas (todo el ancho de boxsection) */
+            grid-row: 2 / 3;          /* Se posiciona abajo */
+            border: 2px solid black;  /* Borde negro como tu boceto */
+            padding: 10px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cancion-audio audio {
+            width: 100%;              /* El reproductor nativo se expande por completo */
+        }
+        /* --------------------------------------------------------------- */
+
+        .boxaside {
+            grid-column: 2 / 3;
+            grid-row: 3;
+            background-color: #dceddc;
+            border-left: 2px solid black;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .imagen-seccion {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: center; 
+        }
+
+        .boxfooter {
+            grid-column: 1 / 3;
+            grid-row: 4;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="boxheader">Cancionero</div>
+        
+        <div class="boxnav">
+            <a href="cancion1.html">La Flaca</a>
+            <a href="cancion2.html">Te Quiero</a>
+            <a href="index.html">Inicio</a>
+            <a href="cancion4.html">Lamento Boliviano</a>
+            <a href="cancion5.html">Culpable o No</a>
+        </div>
+
+        <div class="boxsection">
+            
+            <div class="cancion-foto">
+                <img src="imagenes/lo noche portada.jpg" alt="Portada - La NMLDM">
+            </div>
+
+            <div class="cancion-letra">
+                <h2>La Noche más Linda del Mundo</h2>
+                <pre>
+Y yo llegué a tu casa temblando de miedo
+Y te pedí el perdón que yo nunca concedo
+Te confesé que no conseguí reemplazarte
+Y te dejé en tu alcoba después de besarte
+
+Tus besos eran soles, mis manos puñales
+Tu sonrisa y la mía se dijeron te quiero
+Y brotaron las frases poco tradicionales
+En una mujer libre y un hombre soltero
+
+Y esa fue la noche más linda del mundo
+Aunque nos durara tan solo un segundo
+Mas no me arrepiento, porque aquel momento
+Lo llevo grabado en mi pensamiento
+
+Y esa fue la noche más linda del mundo
+Aunque nos durara tan solo un segundo
+Que no me arrepiento, porque aquel momento
+Lo llevo grabado en mi pensamiento
+
+Tu lecho en mi memoria, amigos ya viejos
+El reloj de pared y la puerta de espejos
+Nos vieron otra vez a los dos reflejados
+Cometiendo uno a uno nuestros siete pecados
+
+Me bebí, de tu cuerpo, la pálida savia
+Con una mezcla extraña de amor y de rabia
+Primero nos amamos y luego lloramos
+Y al final, por exceso de amor, nos separamos
+
+Y esa fue la noche más linda del mundo
+Aunque nos durara tan solo un segundo
+Mas no me arrepiento, porque aquel momento
+Lo llevo grabado en mi pensamiento
+
+Y esa fue la noche más linda del mundo
+Aunque nos durara tan solo un segundo
+Que no me arrepiento, porque aquel momento
+Lo llevo grabado en mi pensamiento
+
+(La noche más linda del mundo)
+(La he pasado yo contigo)
+(Qué noche, qué noche)
+(Nunca la olvido)
+
+Te confesé que no, no conseguí reemplazarte
+Porque al fin me he dado cuenta
+Que nunca podré olvidarte
+
+(La noche más linda del mundo)
+(La he pasado yo contigo)
+(Qué noche, qué noche)
+(Nunca la olvido)
+
+Tus besos eran soles, mis manos puñales
+Y brotaron las frases poco tradicionales esa noche
+
+(La noche más linda del mundo)
+(La he pasado yo contigo)
+(Qué noche, qué noche)
+(Nunca la olvido)
+
+(La noche más linda del mundo)
+(La he pasado yo contigo)
+(Qué noche, qué noche)
+(Nunca la olvido)
+
+La puerta de espejos nos vio reflejados
+Cometiendo uno a uno nuestros siete
+Siete, siete, siete pecados
+
+(La noche más linda del mundo)
+(La he pasado yo contigo)
+(Qué noche, qué noche)
+(Nunca la olvido)
+
+La última noche que pasé contigo
+La llevo guardada como fiel testigo
+Aquellos momentos en que fuiste mía
+¡Ay, qué divinos!
+
+(La noche más linda del mundo)
+(La he pasado yo contigo)
+(Qué noche, qué noche)
+(Nunca la olvido)
+                </pre>
+            </div>
+
+            <div class="cancion-audio">
+                <audio controls>
+                    <source src="audio/La Noche MLDM.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+
+        </div>
+
+        <div class="boxaside">
+            <img src="imagenes/big anuncio.jpg" alt="Anuncio Big" class="imagen-seccion">
+        </div>
+
+        <div class="boxfooter">
+            &copy; 2026 Jade Guadalupe Pacheco Uc | Todos los derechos reservados
+        </div>
+    </div>
+</body>
+</html>
